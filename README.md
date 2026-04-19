@@ -89,8 +89,8 @@ function ContactForm() {
 ```tsx
 <LazyCaptcha
   sitekey="YOUR_SITE_KEY"
-  type="image_puzzle"     // 'auto' | 'image_puzzle' | 'pow' | 'behavioral' | 'text_math'
-  theme="dark"            // 'light' | 'dark'
+  type="image_puzzle"     // 'auto' | 'image_puzzle' | 'pow' | 'behavioral' | 'text_math' | 'press_hold' | 'rotate_align'
+  theme="dark"            // 'light' | 'dark' | 'auto'
   onVerify={setToken}
 />
 ```
@@ -118,8 +118,8 @@ function Form() {
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
 | `sitekey` | `string` | — | **Required.** Your public site key. |
-| `type` | `ChallengeType` | `'auto'` | Challenge type: `auto`, `image_puzzle`, `pow`, `behavioral`, `text_math`. |
-| `theme` | `'light' \| 'dark'` | `'light'` | Widget theme. |
+| `type` | `ChallengeType` | `'auto'` | Challenge type: `auto`, `image_puzzle`, `pow`, `behavioral`, `text_math`, `press_hold`, `rotate_align`. |
+| `theme` | `'light' \| 'dark' \| 'auto'` | `'light'` | Widget theme. `'auto'` follows the host page's dark-mode class/attribute and the OS `prefers-color-scheme`. |
 | `baseUrl` | `string` | `'https://lazycaptcha.com'` | Your LazyCaptcha instance URL. |
 | `onVerify` | `(token: string) => void` | — | Called with the verification token. |
 | `onExpire` | `() => void` | — | Called when the challenge expires. |

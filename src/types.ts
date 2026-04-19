@@ -1,6 +1,6 @@
-export type ChallengeType = 'auto' | 'image_puzzle' | 'pow' | 'behavioral' | 'text_math';
+export type ChallengeType = 'auto' | 'image_puzzle' | 'pow' | 'behavioral' | 'text_math' | 'press_hold' | 'rotate_align';
 
-export type Theme = 'light' | 'dark';
+export type Theme = 'light' | 'dark' | 'auto';
 
 export interface LazyCaptchaProps {
   /** Your public site key from the LazyCaptcha dashboard. */
