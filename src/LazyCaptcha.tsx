@@ -6,7 +6,9 @@ export const LazyCaptcha = forwardRef<LazyCaptchaHandle, LazyCaptchaProps>(funct
   {
     sitekey,
     type = 'auto',
-    theme = 'light',
+    theme = 'auto',
+    widget = 'standard',
+    width,
     baseUrl,
     onVerify,
     onExpire,
@@ -54,6 +56,8 @@ export const LazyCaptcha = forwardRef<LazyCaptchaHandle, LazyCaptchaProps>(funct
           sitekey,
           type,
           theme,
+          widget,
+          width,
           callback: (token: string) => {
             tokenRef.current = token;
             onVerifyRef.current?.(token);
@@ -81,7 +85,7 @@ export const LazyCaptcha = forwardRef<LazyCaptchaHandle, LazyCaptchaProps>(funct
         containerRef.current.innerHTML = '';
       }
     };
-  }, [sitekey, type, theme, baseUrl]);
+  }, [sitekey, type, theme, widget, width, baseUrl]);
 
   useImperativeHandle(
     ref,

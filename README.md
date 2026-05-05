@@ -1,6 +1,6 @@
 # @lazycaptcha/react
 
-> React component for [LazyCaptcha](https://github.com/yourusername/lazycaptcha) — privacy-friendly CAPTCHA with four challenge types.
+> React component for [LazyCaptcha](https://github.com/yourusername/lazycaptcha) — privacy-friendly CAPTCHA with six challenge types and multi-step challenge flows.
 
 [![npm](https://img.shields.io/npm/v/@lazycaptcha/react.svg)](https://www.npmjs.com/package/@lazycaptcha/react)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -95,6 +95,17 @@ function ContactForm() {
 />
 ```
 
+### Widget preset / width override
+
+```tsx
+<LazyCaptcha
+  sitekey="YOUR_SITE_KEY"
+  widget="standard"       // 'standard' | 'compact' | 'newsletter' | 'login'
+  width="420px"           // optional, capped at 500px by the hosted widget
+  onVerify={setToken}
+/>
+```
+
 ### Imperative reset
 
 ```tsx
@@ -119,7 +130,9 @@ function Form() {
 |------|------|---------|-------------|
 | `sitekey` | `string` | — | **Required.** Your public site key. |
 | `type` | `ChallengeType` | `'auto'` | Challenge type: `auto`, `image_puzzle`, `pow`, `behavioral`, `text_math`, `press_hold`, `rotate_align`. |
-| `theme` | `'light' \| 'dark' \| 'auto'` | `'light'` | Widget theme. `'auto'` follows the host page's dark-mode class/attribute and the OS `prefers-color-scheme`. |
+| `theme` | `'light' \| 'dark' \| 'auto'` | `'auto'` | Widget theme. `'auto'` follows the host page's dark-mode class/attribute and the OS `prefers-color-scheme`. |
+| `widget` | `'standard' \| 'compact' \| 'newsletter' \| 'login'` | `'standard'` | Widget preset. `newsletter` stays intentionally skinny. |
+| `width` | `number \| string` | â€” | Optional width override. The hosted widget caps widths at `500px`. |
 | `baseUrl` | `string` | `'https://lazycaptcha.com'` | Your LazyCaptcha instance URL. |
 | `onVerify` | `(token: string) => void` | — | Called with the verification token. |
 | `onExpire` | `() => void` | — | Called when the challenge expires. |

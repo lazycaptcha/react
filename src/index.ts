@@ -6,5 +6,7 @@ export type {
   LazyCaptchaHandle,
   ChallengeType,
   Theme,
+  WidgetPreset,
+  WidgetWidth,
   LazyCaptchaGlobal,
 } from './types';
